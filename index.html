@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
+  />
+    <title>Online Counter</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        html{
+            font-size:16px;
+        }
+        body{
+            background-color: #E6E8EB;
+        }
+        .container{
+            margin-top:10vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .head h1{
+            color:brown
+        }
+        .counter{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .counter p{
+            border: 1px solid dodgerblue;
+            border-radius: 100%;
+            padding: 15px;
+            margin:0 10px;
+            color:dodgerblue;
+            font-weight: bolder;
+        }
+        .counter input{
+            padding: 20px;
+            width:200px;
+            border:2px solid #E6E8EB;
+            text-align: center;
+            font-size: 1.6rem;
+            outline:none;
+            color:dodgerblue;
+        }
+        .head,.detail,.counter{
+            margin:20px 0;
+        }
+        .head h1{
+            font-size: 3rem;
+            font-weight: lighter;
+        }
+        .counter #minus:hover{
+           color: red;
+           border:1px solid red;
+           background-color:lightgray;
+           
+        }
+        .counter #plus:hover{
+           color: green;
+           border:1px solid green;
+           background-color:lightgray;
+           
+        }
+        .detail p{
+            color:dodgerblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <h1>Online Counter</h1>
+        </div>
+
+        <div class="detail">
+            <p>Increase Number With a Button Click</p>
+        </div>
+        
+        <div class="counter">
+            <div class="minus"><a onclick="decrement()"><p id="minus"><i class="fas fa-minus"></i></p></a></div>
+            <div class="inputf"><input type="text" class="ctext" id="ctext" value='0' onfocusin="borderc(this)" onfocusout="borderc1(this)"></div>
+            <div class="plus"><a onclick="increment()"><p id="plus"><i class="fas fa-plus"></i></p></a></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+function increment(){
+    var a=document.getElementById('ctext').value;
+    a++;
+    document.getElementById('ctext').value=a;
+}
+function decrement(){
+    var a=document.getElementById('ctext').value;
+    if(a>0){
+        a--;
+    document.getElementById('ctext').value=a;
+    }
+    
+}
+
+function borderc(x){
+    x.style.border="2px solid dodgerblue";
+    x.style.background="lightgray";
+}
+function borderc1(x){
+    x.style.border="2px solid #E6E8EB";
+    x.style.background="white";
+}
+</script>
